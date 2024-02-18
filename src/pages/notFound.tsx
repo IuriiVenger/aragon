@@ -5,7 +5,7 @@ import {useTranslation} from 'react-i18next';
 import {ButtonText} from '@aragon/ods-old';
 
 import {Container, GridLayout} from 'components/layout';
-import Logo from 'public/logoBlue.svg';
+import Logo from 'public/logo-main.svg';
 import Logo404 from 'public/illu-custom.svg';
 import Green from 'public/circleGreenGradient.svg';
 import Purple from 'public/purpleGradient.svg';

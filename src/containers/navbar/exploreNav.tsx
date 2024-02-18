@@ -1,31 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  ButtonIcon,
-  ButtonText,
-  ButtonWallet,
-  IconFeedback,
-  useScreen,
-} from '@aragon/ods-old';
+import {ButtonWallet} from '@aragon/ods-old';
 import {useTranslation} from 'react-i18next';
 
 import {useWallet} from 'hooks/useWallet';
-import Logo from 'public/logo.svg';
+import Logo from 'public/logo-header.svg';
 import {useGlobalModalContext} from 'context/globalModals';
 import {Container, GridLayout} from 'components/layout';
-import {FEEDBACK_FORM} from 'utils/constants';
 
 const ExploreNav: React.FC = () => {
   const {t} = useTranslation();
   const {address, ensName, ensAvatarUrl, isConnected, methods} = useWallet();
   const {open} = useGlobalModalContext();
-  const {isDesktop} = useScreen();
 
   const path = t('logo.linkURL');
-
-  const handleFeedbackButtonClick = () => {
-    window.open(FEEDBACK_FORM, '_blank');
-  };
 
   const handleWalletButtonClick = () => {
     if (isConnected) {
@@ -52,22 +40,6 @@ const ExploreNav: React.FC = () => {
           </LeftContent>
           <RightContent>
             <ActionsWrapper>
-              {isDesktop ? (
-                <ButtonText
-                  size="large"
-                  label={t('navButtons.giveFeedback')}
-                  mode="secondary"
-                  iconRight={<IconFeedback />}
-                  onClick={handleFeedbackButtonClick}
-                />
-              ) : (
-                <ButtonIcon
-                  size="large"
-                  mode="secondary"
-                  icon={<IconFeedback />}
-                  onClick={handleFeedbackButtonClick}
-                />
-              )}
               <ButtonWallet
                 src={ensAvatarUrl || address}
                 onClick={handleWalletButtonClick}

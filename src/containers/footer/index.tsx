@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import {GridLayout} from 'components/layout';
 import useScreen from 'hooks/useScreen';
-import IconLogoBlue from 'public/iconLogoBlue.svg';
+import IconLogo from 'public/logo-footer.svg';
 import {EXPLORE_NAV_LINKS, PRIVACY_NAV_LINKS} from 'utils/constants';
 import {useWallet} from 'hooks/useWallet';
 
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
             {isDesktop ? (
               <>
                 <FlexDiv>
-                  <LogoContainer src={IconLogoBlue} />
+                  <LogoContainer src={IconLogo} />
                   <StyledNavList>{ExploreNavLinks}</StyledNavList>
                 </FlexDiv>
                 <FlexDiv>
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
               </>
             ) : (
               <>
-                <LogoContainer src={IconLogoBlue} />
+                <LogoContainer src={IconLogo} />
                 <StyledNavList>{ExploreNavLinks}</StyledNavList>
                 <StyledNavList>{PrivacyNavLinks}</StyledNavList>
                 <Copyright>
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
         }`}
       >
         <IconInfo />
-        <span>Aragon App Public Beta</span>
+        <span>Aragon App Public</span>
       </div>
     </Section>
   );
@@ -87,7 +87,7 @@ const FlexDiv = styled.div.attrs({
 })``;
 
 const LogoContainer = styled.img.attrs({
-  className: 'h-10',
+  className: 'h-4',
 })``;
 
 const StyledNavList = styled.ul.attrs({

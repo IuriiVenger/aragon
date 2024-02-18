@@ -1,10 +1,5 @@
 import {useReactiveVar} from '@apollo/client';
-import {
-  Breadcrumb,
-  ButtonText,
-  ButtonWallet,
-  IconFeedback,
-} from '@aragon/ods-old';
+import {Breadcrumb, ButtonWallet} from '@aragon/ods-old';
 import React, {useCallback, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {generatePath, useNavigate, useParams} from 'react-router-dom';
@@ -120,15 +115,6 @@ const DesktopNav: React.FC<DesktopNavProp> = props => {
         </Content>
 
         <div className="flex gap-4">
-          <ButtonText
-            className="w-full md:w-max"
-            size="large"
-            label={t('navButtons.giveFeedback')}
-            mode="secondary"
-            iconRight={<IconFeedback />}
-            onClick={props.onFeedbackClick}
-          />
-
           <ButtonWallet
             src={ensAvatarUrl || address}
             onClick={props.onWalletClick}
