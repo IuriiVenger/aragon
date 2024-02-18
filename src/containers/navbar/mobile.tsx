@@ -73,7 +73,7 @@ const MobileNav: React.FC<MobileNavProps> = props => {
           </FlexOne>
         </Menu>
       </Container>
-      <MobileMenu onFeedbackClick={props.onFeedbackClick} />
+      <MobileMenu />
     </>
   );
 };
